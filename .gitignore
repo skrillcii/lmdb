@@ -13,5 +13,4 @@ __pycache__/
 *.class
 
 # Repo specific
-dataset/mnist/
-dataset/lmdb/
+dataset/
