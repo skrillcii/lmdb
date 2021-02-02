@@ -1,0 +1,17 @@
+# Macos meta files
+*.DS_Store
+
+# Development meta files
+*.swo
+*.swp
+*.vim
+*.vim/
+*tags
+
+# Byte-compiled
+__pycache__/
+*.class
+
+# Repo specific
+dataset/mnist/
+dataset/lmdb/
