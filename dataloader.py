@@ -32,12 +32,11 @@ class MNIST(Dataset):
             dummy_size   = 49152
             buffer_size  = 3
             map_size     = dummy_size * buffer_size * len(data)
-            self.lmdb_io = {
-                    'writer': lmdb.open(root+'/lmdb', map_size=map_size, max_readers=128,
-                        readonly=False, lock=True, writemap=False),
-                    'reader': lmdb.open(root+'/lmdb', map_size=map_size, max_readers=128,
-                        readonly=True, lock=False)
-            }
+            self.lmdb_io = {'writer': lmdb.open(root + '/lmdb', map_size=map_size, max_readers=128,
+                                                readonly=False, lock=True, writemap=False),
+                            'reader': lmdb.open(root + '/lmdb', map_size=map_size, max_readers=128,
+                                                readonly=True, lock=False),
+                            }
 
             # Check memory sizes
             self._get_object_size(dummy)
@@ -71,7 +70,7 @@ class MNIST(Dataset):
         print(f' object_size: {object_size}, \n object_info: {object_info} \n')
 
     @staticmethod
-    def _get_tensor_size_ (tensor):
+    def _get_tensor_size_(tensor):
         element_size = tensor.element_size()
         num_element  = tensor.nelement()
         tensor_size  = element_size * num_element
